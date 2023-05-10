@@ -1,6 +1,5 @@
 package com.example.estateagency.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,7 +11,7 @@ public class Buyers {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long id;
+    private long buyer_id;
     private String firstName;
     private String lastName;
 
@@ -20,20 +19,20 @@ public class Buyers {
 
     private String address;
 
-    private int postcode;
+    private String postcode;
 
     private int phone;
 
 
 
-    public long getId() {
-        return id;
+    public long getBuyer_id() {
+        return buyer_id;
     }
 
 
 
-    public Buyers(long id, String firstName, String lastName, String email, String address, int postcode, int phone, Buyers buyers, List<Properties> propertiesList) {
-        this.id = id;
+    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, int phone, Buyers buyers, List<Properties> propertiesList) {
+        this.buyer_id = buyer_id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -58,11 +57,11 @@ public class Buyers {
         this.address = address;
     }
 
-    public int getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 
@@ -77,8 +76,8 @@ public class Buyers {
     public Buyers() {
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setBuyer_id(long id) {
+        this.buyer_id = id;
     }
 
     public String getFirstName() {
@@ -102,7 +101,7 @@ public class Buyers {
     @Override
     public String toString() {
         return "Buyers{" +
-                "id=" + id +
+                "id=" + buyer_id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

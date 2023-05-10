@@ -10,7 +10,7 @@ import java.util.List;
 public class Sellers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long seller_id;
     private String firstName;
     private String lastName;
 
@@ -18,23 +18,23 @@ public class Sellers {
 
     private String address;
 
-    private int postcode;
+    private String postcode;
 
     private int phone;
 
-    @ManyToOne
-    private Properties property;
+//    @ManyToOne
+//    private Properties property;
 
     @OneToMany(mappedBy = "sellers", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Properties> propertiesList;
 
-    public long getId() {
-        return id;
+    public long getSeller_id() {
+        return seller_id;
     }
 
-    public Sellers(long id, String firstName, String lastName, String email, String address, int postcode, int phone, List<Properties> propertiesList) {
-        this.id = id;
+    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone, List<Properties> propertiesList) {
+        this.seller_id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -60,11 +60,11 @@ public class Sellers {
         this.address = address;
     }
 
-    public int getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 
@@ -88,8 +88,8 @@ public class Sellers {
     public Sellers() {
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setSeller_id(long id) {
+        this.seller_id = id;
     }
 
     public String getFirstName() {
@@ -121,7 +121,7 @@ public class Sellers {
     @Override
     public String toString() {
         return "Sellers{" +
-                "id=" + id +
+                "id=" + seller_id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

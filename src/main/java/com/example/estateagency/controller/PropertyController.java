@@ -1,6 +1,7 @@
 package com.example.estateagency.controller;
 
 import com.example.estateagency.model.Properties;
+import com.example.estateagency.model.Sellers;
 import com.example.estateagency.repo.PropertyRepo;
 import com.example.estateagency.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/address")
+@RequestMapping("/property")
 public class PropertyController {
 
 
@@ -24,8 +25,6 @@ public class PropertyController {
         this.service = service;
     }
 
-
-
         @GetMapping("/read")
         public List<Properties> read() {
             return service.getAll();
@@ -33,17 +32,23 @@ public class PropertyController {
 
         @GetMapping("/read/{id}")
         public Properties readOne(@PathVariable long id ) {
-            return service.getAddress(id);
+            return service.getProperty(id);
         }
 
         @PostMapping("/add")
         public Properties add(@RequestBody Properties newAddr){
-            return this.service.createAddress(newAddr);
+            return this.service.createProperty(newAddr);
         }
 
         @DeleteMapping("/delete/{id}")
         public void delete(@PathVariable long id ) {
-            service.deleteAddress(id);
+            service.deleteProperty(id);
         }
 
+    @PutMapping ("/update/{id}")
+    public Properties updateProperty (@PathVariable long id, @RequestBody Properties properties ){
+        return this.service.updateProperty(id, properties );
+
+
+    }
     }
