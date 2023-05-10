@@ -6,9 +6,18 @@ import jakarta.persistence.*;
 public class Properties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long property_id;
+    String address;
+    String postcode;
+    String price;
+    String status;
     String type;
-    String description;
+    String bedrooms;
+    String bathrooms;
+    String garden;
+    String seller_id_fk;
+
+
 
     @ManyToOne
     private Sellers sellers;
@@ -16,19 +25,68 @@ public class Properties {
     public Properties() {
     }
 
-    public Properties(long id, String type, String description, Sellers sellers) {
-        this.id = id;
-        this.type = type;
-        this.description = description;
-        this.sellers = sellers;
-    }
+
 
     public long getId() {
-        return id;
+        return property_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.property_id = id;
+    }
+
+    public Properties(long property_id, String address, String postcode, String price, String status, String type, String bedrooms, String bathrooms, String garden, String seller_id_fk, Sellers sellers) {
+        this.property_id = property_id;
+        this.address = address;
+        this.postcode = postcode;
+        this.price = price;
+        this.status = status;
+        this.type = type;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.garden = garden;
+        this.seller_id_fk = seller_id_fk;
+        this.sellers = sellers;
+    }
+
+    public long getProperty_id() {
+        return property_id;
+    }
+
+    public void setProperty_id(long property_id) {
+        this.property_id = property_id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getType() {
@@ -39,29 +97,61 @@ public class Properties {
         this.type = type;
     }
 
-    public String getDescription() {
-        return description;
+    public String getBedrooms() {
+        return bedrooms;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBedrooms(String bedrooms) {
+        this.bedrooms = bedrooms;
     }
 
-    public Sellers getEmployee() {
+    public String getBathrooms() {
+        return bathrooms;
+    }
+
+    public void setBathrooms(String bathrooms) {
+        this.bathrooms = bathrooms;
+    }
+
+    public String getGarden() {
+        return garden;
+    }
+
+    public void setGarden(String garden) {
+        this.garden = garden;
+    }
+
+    public String getSeller_id_fk() {
+        return seller_id_fk;
+    }
+
+    public void setSeller_id_fk(String seller_id_fk) {
+        this.seller_id_fk = seller_id_fk;
+    }
+
+    public Sellers getSellers() {
         return sellers;
     }
 
-    public void setEmployee(Sellers sellers) {
+    public void setSellers(Sellers sellers) {
         this.sellers = sellers;
     }
 
     @Override
     public String toString() {
         return "Properties{" +
-                "id=" + id +
+                "property_id=" + property_id +
+                ", address='" + address + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", price='" + price + '\'' +
+                ", status='" + status + '\'' +
                 ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
+                ", bedrooms='" + bedrooms + '\'' +
+                ", bathrooms='" + bathrooms + '\'' +
+                ", garden='" + garden + '\'' +
+                ", seller_id_fk='" + seller_id_fk + '\'' +
                 ", sellers=" + sellers +
                 '}';
     }
 }
+

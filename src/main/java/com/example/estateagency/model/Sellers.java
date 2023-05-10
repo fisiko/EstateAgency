@@ -23,7 +23,7 @@ public class Sellers {
     private int phone;
 
     @ManyToOne
-    private Buyers buyers;
+    private Properties property;
 
     @OneToMany(mappedBy = "sellers", fetch = FetchType.EAGER)
     @JsonIgnore
@@ -33,7 +33,7 @@ public class Sellers {
         return id;
     }
 
-    public Sellers(long id, String firstName, String lastName, String email, String address, int postcode, int phone, Buyers buyers, List<Properties> propertiesList) {
+    public Sellers(long id, String firstName, String lastName, String email, String address, int postcode, int phone, List<Properties> propertiesList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,7 +41,6 @@ public class Sellers {
         this.address = address;
         this.postcode = postcode;
         this.phone = phone;
-        this.buyers = buyers;
         this.propertiesList = propertiesList;
     }
 
@@ -77,13 +76,6 @@ public class Sellers {
         this.phone = phone;
     }
 
-    public Buyers getBuyers() {
-        return buyers;
-    }
-
-    public void setBuyers(Buyers buyers) {
-        this.buyers = buyers;
-    }
 
     public List<Properties> getPropertiesList() {
         return propertiesList;
@@ -136,7 +128,6 @@ public class Sellers {
                 ", address='" + address + '\'' +
                 ", postcode=" + postcode +
                 ", phone=" + phone +
-                ", buyers=" + buyers +
                 ", propertiesList=" + propertiesList +
                 '}';
     }
