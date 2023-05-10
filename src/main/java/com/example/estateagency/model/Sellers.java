@@ -44,6 +44,17 @@ public class Sellers {
         this.propertiesList = propertiesList;
     }
 
+//    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone) {
+//        this.seller_id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.address = address;
+//        this.postcode = postcode;
+//        this.phone = phone;
+//    }
+
+
     public String getEmail() {
         return email;
     }
@@ -87,6 +98,9 @@ public class Sellers {
 
     public Sellers() {
     }
+    public Sellers(long id) {
+        this.seller_id = id;
+    }
 
     public void setSeller_id(long id) {
         this.seller_id = id;
@@ -106,16 +120,6 @@ public class Sellers {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-
-
-    public List<Properties> getAddressList() {
-        return propertiesList;
-    }
-
-    public void setAddressList(List<Properties> propertiesList) {
-        this.propertiesList = propertiesList;
     }
 
     @Override

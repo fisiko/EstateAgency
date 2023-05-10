@@ -15,7 +15,6 @@ public class Properties {
     String bedrooms;
     String bathrooms;
     String garden;
-    String seller_id_fk;
 
 
 
@@ -45,9 +44,10 @@ public class Properties {
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
         this.garden = garden;
-        this.seller_id_fk = seller_id_fk;
         this.sellers = sellers;
     }
+
+
 
     public long getProperty_id() {
         return property_id;
@@ -121,13 +121,6 @@ public class Properties {
         this.garden = garden;
     }
 
-    public String getSeller_id_fk() {
-        return seller_id_fk;
-    }
-
-    public void setSeller_id_fk(String seller_id_fk) {
-        this.seller_id_fk = seller_id_fk;
-    }
 
     public Sellers getSellers() {
         return sellers;
@@ -149,7 +142,6 @@ public class Properties {
                 ", bedrooms='" + bedrooms + '\'' +
                 ", bathrooms='" + bathrooms + '\'' +
                 ", garden='" + garden + '\'' +
-                ", seller_id_fk='" + seller_id_fk + '\'' +
                 ", sellers=" + sellers +
                 '}';
     }
