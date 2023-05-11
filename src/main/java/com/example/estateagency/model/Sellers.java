@@ -13,7 +13,6 @@ public class Sellers {
     private long seller_id;
     private String firstName;
     private String lastName;
-
     private String email;
 
     private String address;
@@ -44,15 +43,15 @@ public class Sellers {
         this.propertiesList = propertiesList;
     }
 
-//    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone) {
-//        this.seller_id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//        this.address = address;
-//        this.postcode = postcode;
-//        this.phone = phone;
-//    }
+    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone) {
+        this.seller_id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.postcode = postcode;
+        this.phone = phone;
+    }
 
 
     public String getEmail() {

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Properties {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long property_id;
     String address;
     String postcode;
@@ -17,7 +17,7 @@ public class Properties {
     String garden;
 
 
-
+    @JoinColumn(name = "seller_id_fk")
     @ManyToOne
     private Sellers sellers;
 

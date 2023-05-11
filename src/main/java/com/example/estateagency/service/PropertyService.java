@@ -57,6 +57,7 @@ public class PropertyService {
         if (property.getBathrooms()!=null) toUpdate.setAddress(property.getAddress());
         if (property.getBedrooms()!=null) toUpdate.setAddress(property.getAddress());
         if (property.getGarden()!=null) toUpdate.setAddress(property.getAddress());
+        //if (property.getSeller_id_fk()!=null) toUpdate.setAddress(property.getAddress());
         if (property.getSellers()!=null) toUpdate.setAddress(property.getAddress());
 
         return this.repo.save(toUpdate);
