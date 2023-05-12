@@ -21,10 +21,12 @@ public class Properties {
     @ManyToOne
     private Sellers sellers;
 
+    @JoinColumn(name = "buyer_id_fk")
+    @ManyToOne
+    private Buyers buyers;
+
     public Properties() {
     }
-
-
 
     public long getId() {
         return property_id;
@@ -47,7 +49,19 @@ public class Properties {
         this.sellers = sellers;
     }
 
-
+    public Properties(long property_id, String address, String postcode, String price, String status, String type, String bedrooms, String bathrooms, String garden, Sellers sellers, Buyers buyers) {
+        this.property_id = property_id;
+        this.address = address;
+        this.postcode = postcode;
+        this.price = price;
+        this.status = status;
+        this.type = type;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.garden = garden;
+        this.sellers = sellers;
+        this.buyers = buyers;
+    }
 
     public long getProperty_id() {
         return property_id;
@@ -55,6 +69,14 @@ public class Properties {
 
     public void setProperty_id(long property_id) {
         this.property_id = property_id;
+    }
+
+    public Buyers getBuyers() {
+        return buyers;
+    }
+
+    public void setBuyers(Buyers buyers) {
+        this.buyers = buyers;
     }
 
     public String getAddress() {
@@ -143,6 +165,7 @@ public class Properties {
                 ", bathrooms='" + bathrooms + '\'' +
                 ", garden='" + garden + '\'' +
                 ", sellers=" + sellers +
+                ", buyers=" + buyers +
                 '}';
     }
 }

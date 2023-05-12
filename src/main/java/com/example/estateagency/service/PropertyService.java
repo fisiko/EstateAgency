@@ -50,15 +50,15 @@ public class PropertyService {
 
         Properties toUpdate = this.getProperty(id);
         if (property.getAddress()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getPostcode()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getPrice()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getStatus()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getType()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getBathrooms()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getBedrooms()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getGarden()!=null) toUpdate.setAddress(property.getAddress());
+        if (property.getPostcode()!=null) toUpdate.setPostcode(property.getPostcode());
+        if (property.getPrice()!=null) toUpdate.setPrice(property.getPrice());
+        if (property.getStatus()!=null) toUpdate.setStatus(property.getStatus());
+        if (property.getType()!=null) toUpdate.setType(property.getType());
+        if (property.getBathrooms()!=null) toUpdate.setBathrooms(property.getBathrooms());
+        if (property.getBedrooms()!=null) toUpdate.setBedrooms(property.getBedrooms());
+        if (property.getGarden()!=null) toUpdate.setGarden(property.getGarden());
         //if (property.getSeller_id_fk()!=null) toUpdate.setAddress(property.getAddress());
-        if (property.getSellers()!=null) toUpdate.setAddress(property.getAddress());
+        if (property.getSellers()!=null) toUpdate.setSellers(property.getSellers());
 
         return this.repo.save(toUpdate);
 

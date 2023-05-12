@@ -1,5 +1,6 @@
 package com.example.estateagency.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -21,17 +22,17 @@ public class Buyers {
 
     private String postcode;
 
-    private int phone;
+    private String phone;
 
-
+    @OneToMany(mappedBy = "buyers", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<Properties> propertiesList;
 
     public long getBuyer_id() {
         return buyer_id;
     }
 
-
-
-    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, int phone, Buyers buyers, List<Properties> propertiesList) {
+    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, String phone, Buyers buyers) {
         this.buyer_id = buyer_id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,12 +42,31 @@ public class Buyers {
         this.phone = phone;
     }
 
+    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, String phone, List<Properties> propertiesList) {
+        this.buyer_id = buyer_id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.postcode = postcode;
+        this.phone = phone;
+        this.propertiesList = propertiesList;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Properties> getPropertiesList() {
+        return propertiesList;
+    }
+
+    public void setPropertiesList(List<Properties> propertiesList) {
+        this.propertiesList = propertiesList;
     }
 
     public String getAddress() {
@@ -65,11 +85,11 @@ public class Buyers {
         this.postcode = postcode;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -108,6 +128,7 @@ public class Buyers {
                 ", address='" + address + '\'' +
                 ", postcode=" + postcode +
                 ", phone=" + phone +
+                ", propertiesList=" + propertiesList +
                 '}';
     }
 }

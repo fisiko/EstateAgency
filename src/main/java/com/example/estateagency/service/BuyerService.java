@@ -53,7 +53,7 @@ public class BuyerService {
         if (buyers.getLastName()!=null) toUpdate.setLastName(buyers.getLastName());
         if (buyers.getEmail()!=null) toUpdate.setEmail(buyers.getEmail());
         if (buyers.getAddress()!=null) toUpdate.setAddress(buyers.getAddress());
-        if (buyers.getPhone()!=0) toUpdate.setPhone(buyers.getPhone());
+        if (buyers.getPhone()!=null) toUpdate.setPhone(buyers.getPhone());
         if (buyers.getPostcode()!=null) toUpdate.setPostcode(buyers.getPostcode());
 
         return this.repo.save(toUpdate);

@@ -9,48 +9,47 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*")
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/property")
 public class PropertyController {
 
 
-        @Autowired
-        PropertyRepo mRepo;
+    @Autowired
+    PropertyRepo mRepo;
 
 
     @Autowired
     PropertyService service;
 
-    public PropertyController(PropertyService service){
+    public PropertyController(PropertyService service) {
         this.service = service;
     }
 
-        @GetMapping("/read")
-        public List<Properties> read() {
-            return service.getAll();
-        }
+    @GetMapping("/read")
+    public List<Properties> read() {
+        return service.getAll();
+    }
 
-        @GetMapping("/read/{id}")
-        public Properties readOne(@PathVariable long id ) {
-            return service.getProperty(id);
-        }
+    @GetMapping("/read/{id}")
+    public Properties readOne(@PathVariable long id) {
+        return service.getProperty(id);
+    }
 
-        @PostMapping("/add")
-        public Properties add(@RequestBody Properties newAddr){
-            return this.service.createProperty(newAddr);
-        }
+    @PostMapping("/add")
+    public Properties add(@RequestBody Properties newAddr) {
+        return this.service.createProperty(newAddr);
+    }
 
-        @DeleteMapping("/delete/{id}")
-        public void delete(@PathVariable long id ) {
-            service.deleteProperty(id);
-        }
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable long id) {
+        service.deleteProperty(id);
+    }
 
-    @PutMapping ("/update/{id}")
-    public Properties updateProperty (@PathVariable long id, @RequestBody Properties properties ){
-        return this.service.updateProperty(id, properties );
+    @PutMapping("/update/{id}")
+    public Properties updateProperty(@PathVariable long id, @RequestBody Properties properties) {
+        return this.service.updateProperty(id, properties);
 
 
     }
-    }
+}

@@ -19,7 +19,7 @@ public class Sellers {
 
     private String postcode;
 
-    private int phone;
+    private String phone;
 
 //    @ManyToOne
 //    private Properties property;
@@ -32,7 +32,7 @@ public class Sellers {
         return seller_id;
     }
 
-    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone, List<Properties> propertiesList) {
+    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, String phone, List<Properties> propertiesList) {
         this.seller_id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -43,7 +43,7 @@ public class Sellers {
         this.propertiesList = propertiesList;
     }
 
-    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, int phone) {
+    public Sellers(long id, String firstName, String lastName, String email, String address, String postcode, String phone) {
         this.seller_id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -78,11 +78,11 @@ public class Sellers {
         this.postcode = postcode;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
