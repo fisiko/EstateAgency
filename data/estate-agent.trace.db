@@ -1,0 +1,39 @@
+2023-05-10 15:08:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'njknjk' (SELLERS: ""POSTCODE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:08:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'njknjk' (SELLERS: ""POSTCODE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:08:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (PROPERTIES: ""SELLERS_SELLER_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."PROPERTIES"("PROPERTY_ID","ADDRESS","BATHROOMS","BEDROOMS","GARDEN","POSTCODE","PRICE","SELLER_ID_FK","STATUS","TYPE","SELLERS_SELLER_ID")VALUES(?,?,?,?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:08:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (PROPERTIES: ""SELLERS_SELLER_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."PROPERTIES"("PROPERTY_ID","ADDRESS","BATHROOMS","BEDROOMS","GARDEN","POSTCODE","PRICE","SELLER_ID_FK","STATUS","TYPE","SELLERS_SELLER_ID")VALUES(?,?,?,?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:11:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (PROPERTIES: ""SELLERS_SELLER_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."PROPERTIES"("PROPERTY_ID","ADDRESS","BATHROOMS","BEDROOMS","GARDEN","POSTCODE","PRICE","SELLER_ID_FK","STATUS","TYPE","SELLERS_SELLER_ID")VALUES(?,?,?,?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:11:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (PROPERTIES: ""SELLERS_SELLER_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."PROPERTIES"("PROPERTY_ID","ADDRESS","BATHROOMS","BEDROOMS","GARDEN","POSTCODE","PRICE","SELLER_ID_FK","STATUS","TYPE","SELLERS_SELLER_ID")VALUES(?,?,?,?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:13:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SELLER" not found; SQL statement:
+SELECT * FROM  seller [42102-214]
+2023-05-10 15:13:45 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PHONE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:13:45 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PHONE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:16:41 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PHONE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:16:41 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PHONE"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:16:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PROPERTY_PROPERTY_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
+2023-05-10 15:16:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (SELLERS: ""PROPERTY_PROPERTY_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."SELLERS"("SELLER_ID","ADDRESS","EMAIL","FIRST_NAME","LAST_NAME","PHONE","POSTCODE","PROPERTY_PROPERTY_ID")VALUES(?,?,?,?,?,?,?,?) [22018-214]
