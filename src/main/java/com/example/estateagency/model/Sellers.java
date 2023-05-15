@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-
+@Table (name= "sellers")
 @Entity
 public class Sellers {
     @Id
@@ -27,6 +27,7 @@ public class Sellers {
     @OneToMany(mappedBy = "sellers", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Properties> propertiesList;
+
 
     public long getSeller_id() {
         return seller_id;

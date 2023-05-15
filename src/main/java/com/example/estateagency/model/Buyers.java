@@ -3,8 +3,11 @@ package com.example.estateagency.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+@Table (name= "buyers")
 @Entity
 public class Buyers {
 
@@ -28,6 +31,18 @@ public class Buyers {
     @JsonIgnore
     private List<Properties> propertiesList;
 
+
+//    @ManyToMany
+//    @JoinTable(
+//            name = "bookings",
+//            joinColumns = @JoinColumn(name = "buyer_id_fk"),
+//            inverseJoinColumns = @JoinColumn(name = "property_id_fk"))
+//    Set<Properties> propertyBooking; // = new HashSet < Project > ();
+
+    @OneToMany(mappedBy = "buyers")
+    @JsonIgnore
+    private List<Bookings> bookings;
+
     public long getBuyer_id() {
         return buyer_id;
     }
@@ -42,7 +57,7 @@ public class Buyers {
         this.phone = phone;
     }
 
-    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, String phone, List<Properties> propertiesList) {
+    public Buyers(long buyer_id, String firstName, String lastName, String email, String address, String postcode, String phone, List<Properties> propertiesList, List<Bookings> bookings) {
         this.buyer_id = buyer_id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,6 +66,7 @@ public class Buyers {
         this.postcode = postcode;
         this.phone = phone;
         this.propertiesList = propertiesList;
+        this.bookings = bookings;
     }
 
     public String getEmail() {
@@ -116,19 +132,26 @@ public class Buyers {
         this.lastName = lastName;
     }
 
+    public List<Bookings> getBookings() {
+        return bookings;
+    }
 
+    public void setBookings(List<Bookings> bookings) {
+        this.bookings = bookings;
+    }
 
     @Override
     public String toString() {
         return "Buyers{" +
-                "id=" + buyer_id +
+                "buyer_id=" + buyer_id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", postcode=" + postcode +
-                ", phone=" + phone +
+                ", postcode='" + postcode + '\'' +
+                ", phone='" + phone + '\'' +
                 ", propertiesList=" + propertiesList +
+                ", bookings=" + bookings +
                 '}';
     }
 }

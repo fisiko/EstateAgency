@@ -2,6 +2,10 @@ package com.example.estateagency.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+import java.util.Set;
+
+@Table (name= "properties")
 @Entity
 public class Properties {
     @Id
@@ -24,6 +28,9 @@ public class Properties {
     @JoinColumn(name = "buyer_id_fk")
     @ManyToOne
     private Buyers buyers;
+
+    @OneToMany(mappedBy = "properties")
+    private List<Bookings> bookings; // = new HashSet < Project > ();
 
     public Properties() {
     }
