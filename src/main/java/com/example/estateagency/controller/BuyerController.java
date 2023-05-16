@@ -4,6 +4,7 @@ import com.example.estateagency.model.Buyers;
 import com.example.estateagency.model.Sellers;
 import com.example.estateagency.repo.BuyerRepo;
 import com.example.estateagency.service.BuyerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class BuyerController {
     }
 
     @PostMapping("/add")
-    public Buyers add(@RequestBody Buyers newDep){
+    public Buyers add(@Valid @RequestBody Buyers newDep){
         return service.createBuyer(newDep);
     }
 

@@ -2,6 +2,8 @@ package com.example.estateagency.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +18,9 @@ public class Buyers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long buyer_id;
+
+    @NotNull
+    @Size(min = 1)
     private String firstName;
     private String lastName;
 

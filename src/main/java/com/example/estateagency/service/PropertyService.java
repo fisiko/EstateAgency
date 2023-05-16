@@ -3,10 +3,12 @@ package com.example.estateagency.service;
 import com.example.estateagency.model.Buyers;
 import com.example.estateagency.model.Properties;
 import com.example.estateagency.repo.PropertyRepo;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PropertyService {
@@ -27,8 +29,12 @@ public class PropertyService {
 
 
     public Properties getProperty(Long id) {
+        Optional<Properties> propertyOpt = this.repo.findById(id);
+        if (propertyOpt.isPresent()){
+            return propertyOpt.get();
+        }
+        throw new EntityNotFoundException("Property with id " + id + " not found");
 
-        return this.repo.findById(id).get();
 
     }
 

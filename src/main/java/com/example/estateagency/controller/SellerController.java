@@ -4,6 +4,8 @@ import com.example.estateagency.model.Sellers;
 import com.example.estateagency.repo.SellerRepo;
 import com.example.estateagency.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,8 +32,9 @@ public class SellerController {
         }
 
         @PostMapping("/add")
-        public Sellers add(@RequestBody Sellers newEmp){
-            return service.createSeller(newEmp);
+        public ResponseEntity<Sellers> add(@RequestBody Sellers newEmp){
+            Sellers seller = service.createSeller(newEmp);
+            return new ResponseEntity<>(seller, HttpStatus.CREATED);
         }
 
         @DeleteMapping("/delete/{id}")
